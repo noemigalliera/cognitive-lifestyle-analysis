@@ -55,7 +55,7 @@ The dataset includes demographic, behavioral, and cognitive-related variables su
 
 ## Project Structure
 
-```text
+<pre>
 cognitive-lifestyle-analysis/
 │
 ├── notebooks/
@@ -65,51 +65,49 @@ cognitive-lifestyle-analysis/
 ├── README.md
 ├── main.py
 └── requirements.txt
+</pre>
 
 ---
 
 ## Workflow
 
-```text
 1. Exploratory Data Analysis (EDA)
 2. Correlation analysis
 3. Feature selection and leakage prevention
 4. Preprocessing pipeline
-5. numerical scaling with MinMaxScaler
-6. categorical encoding with OneHotEncoder
-7. Model training with RandomForestRegressor
-8. Model evaluation
-9. cross-validation
-10. test set evaluation
-11. Model comparison
-12. Dummy Regressor
-13. AI benchmark
+   - numerical scaling with `MinMaxScaler`
+   - categorical encoding with `OneHotEncoder`
+5. Model training with `RandomForestRegressor`
+6. Model evaluation
+   - cross-validation
+   - test set evaluation
+7. Model comparison
+   - Dummy Regressor
+   - AI benchmark
 
 ---
 
 ## Key Insights
 
-```text
 - Reaction time is the most influential feature in predicting cognitive performance
 - Memory test score shows a strong positive relationship with cognitive score
 - Stress level has a moderate negative impact
-- Exercise frequency emerges as an important feature in the model, suggesting non-linear relationships not   captured by simple correlation analysis
+- Exercise frequency emerges as an important feature in the model, suggesting non-linear relationships not captured by simple correlation analysis
 
 ---
 
 ## Results
 
-```text
-| Model         |     MAE |    RMSE |      R² |
-| ------------- | ------: | ------: | ------: |
-| Dummy         | 19.1099 | 22.9569 | -0.0000 |
-| Random Forest |  1.9937 |  2.5271 |  0.9879 |
-| AI Benchmark  |  2.4301 |  2.8384 |  0.9847 |
+| Model | MAE | RMSE | R² |
+|------|----:|-----:|---:|
+| Dummy | 19.1099 | 22.9569 | -0.0000 |
+| Random Forest | 1.9937 | 2.5271 | 0.9879 |
+| AI Benchmark | 2.4301 | 2.8384 | 0.9847 |
 
+---
 
-Model Interpretation
+## Model Interpretation
 
-```text
 The Random Forest model significantly outperforms the baseline, confirming that it learns meaningful patterns from the data.
 
 It also slightly outperforms the AI benchmark, showing that a relatively simple model can effectively capture the underlying relationships in the dataset.
@@ -123,7 +121,6 @@ Feature importance analysis partially confirms the initial hypothesis:
 
 ## Limitations
 
-```text
 - The dataset appears relatively easy due to highly predictive features
 - Results may not generalize to real-world cognitive modeling scenarios
 - No causal inference is performed
@@ -131,14 +128,19 @@ Feature importance analysis partially confirms the initial hypothesis:
 ---
 
 ## How to Run
+
 1. Clone the repository
 2. Install dependencies:
 
-    pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 3. Run the project:
 
-    python main.py
+```bash
+python main.py
+```
 
 ---
 
