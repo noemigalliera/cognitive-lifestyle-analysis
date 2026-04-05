@@ -27,8 +27,8 @@ The dataset includes demographic, behavioral, and cognitive-related variables su
 - `Cognitive_Score`
 
 ### Excluded variables
-- `AI_Predicted_Score` → used only as benchmark to avoid data leakage
-- `User_ID` → not informative for prediction
+- `AI_Predicted_Score` — used only as a benchmark to avoid data leakage
+- `User_ID` — not informative for prediction
 
 ---
 
@@ -37,8 +37,8 @@ The dataset includes demographic, behavioral, and cognitive-related variables su
 - Explore relationships between lifestyle factors and cognitive performance
 - Build a complete and clean machine learning pipeline
 - Compare model performance with:
-  - a baseline (Dummy Regressor)
-  - an external benchmark (AI predicted score)
+  - a baseline (`DummyRegressor`)
+  - an external benchmark (`AI_Predicted_Score`)
 - Identify the most influential features
 
 ---
@@ -54,72 +54,76 @@ The dataset includes demographic, behavioral, and cognitive-related variables su
 ---
 
 ## Project Structure
+
+```text
 cognitive-lifestyle-analysis/
 │
-├── data/
 ├── notebooks/
-│ └── exploration.ipynb
+│   └── exploration.ipynb
 ├── src/
-├── main.py
-├── requirements.txt
+├── .gitignore
 ├── README.md
-└── .gitignore
-
+├── main.py
+└── requirements.txt
 
 ---
 
 ## Workflow
 
+```text
 1. Exploratory Data Analysis (EDA)
 2. Correlation analysis
 3. Feature selection and leakage prevention
-4. Preprocessing pipeline:
-   - numerical scaling (MinMaxScaler)
-   - categorical encoding (OneHotEncoder)
-5. Model training:
-   - Random Forest Regressor
-6. Model evaluation:
-   - Cross-validation
-   - Test set evaluation
-7. Model comparison:
-   - Dummy Regressor (baseline)
-   - AI benchmark
+4. Preprocessing pipeline
+5. numerical scaling with MinMaxScaler
+6. categorical encoding with OneHotEncoder
+7. Model training with RandomForestRegressor
+8. Model evaluation
+9. cross-validation
+10. test set evaluation
+11. Model comparison
+12. Dummy Regressor
+13. AI benchmark
 
 ---
 
 ## Key Insights
 
+```text
 - Reaction time is the most influential feature in predicting cognitive performance
 - Memory test score shows a strong positive relationship with cognitive score
 - Stress level has a moderate negative impact
-- Exercise frequency emerges as an important feature in the model, suggesting non-linear relationships not captured by simple correlation analysis
+- Exercise frequency emerges as an important feature in the model, suggesting non-linear relationships not   captured by simple correlation analysis
 
 ---
 
 ## Results
 
-| Model | MAE | RMSE | R² |
-|------|-----:|-----:|----:|
-| Dummy | 19.1099 | 22.9569 | -0.0000 |
-| Random Forest | 1.9937 | 2.5271 | 0.9879 |
-| AI Benchmark | 2.4301 | 2.8384 | 0.9847 |
+```text
+| Model         |     MAE |    RMSE |      R² |
+| ------------- | ------: | ------: | ------: |
+| Dummy         | 19.1099 | 22.9569 | -0.0000 |
+| Random Forest |  1.9937 |  2.5271 |  0.9879 |
+| AI Benchmark  |  2.4301 |  2.8384 |  0.9847 |
 
----
 
-## Model Interpretation
+Model Interpretation
 
-The Random Forest model significantly outperforms the baseline, confirming that it is learning meaningful patterns from the data.
+```text
+The Random Forest model significantly outperforms the baseline, confirming that it learns meaningful patterns from the data.
 
-It also slightly outperforms the AI benchmark, showing that a relatively simple model can effectively capture the underlying relationships.
+It also slightly outperforms the AI benchmark, showing that a relatively simple model can effectively capture the underlying relationships in the dataset.
 
 Feature importance analysis partially confirms the initial hypothesis:
-- Reaction time and memory test score are dominant predictors
-- Exercise frequency appears important despite low linear correlation, highlighting the model's ability to capture non-linear effects
+
+- reaction time and memory test score are dominant predictors
+- exercise frequency appears important despite low linear correlation, highlighting the model’s ability to capture non-linear effects
 
 ---
 
 ## Limitations
 
+```text
 - The dataset appears relatively easy due to highly predictive features
 - Results may not generalize to real-world cognitive modeling scenarios
 - No causal inference is performed
@@ -127,19 +131,20 @@ Feature importance analysis partially confirms the initial hypothesis:
 ---
 
 ## How to Run
-
 1. Clone the repository
 2. Install dependencies:
 
-```bash
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 3. Run the project:
 
-python main.py
+    python main.py
 
-Future Improvements
-Compare additional models (e.g., Linear Regression)
-Add model explainability (e.g., SHAP values)
-Build an interactive dashboard (Streamlit)
-Test on more complex and realistic datasets
+---
+
+## Future Improvements
+
+1. Compare additional models (for example, Linear Regression)
+2. Add model explainability tools such as SHAP
+3. Build an interactive dashboard with Streamlit
+4. Test the pipeline on more realistic datasets
