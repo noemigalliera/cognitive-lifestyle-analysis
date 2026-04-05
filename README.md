@@ -150,3 +150,15 @@ python main.py
 2. Add model explainability tools such as SHAP
 3. Build an interactive dashboard with Streamlit
 4. Test the pipeline on more realistic datasets
+
+---
+
+## Visualizations
+
+These visualizations highlight the strongest relationship observed in the data (reaction time) and the most influential features identified by the model.
+
+### Reaction Time vs Cognitive Score (Average)
+![Reaction Time vs Cognitive Score](outputs/figures/reaction_time_cognitive_score.png)
+
+### Feature Importances
+![Feature Importances](outputs/figures/feature_importance.png)
